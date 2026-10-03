@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bax550oie0hyb"]
+
+[ext_resource type="PackedScene" uid="uid://b0lhg8fw5lqbr" path="res://TSCN/player.tscn" id="1_fmnqs"]
+
+[node name="main" type="Node2D" unique_id=1383702753]
+
+[node name="player" parent="." unique_id=1565881288 instance=ExtResource("1_fmnqs")]
+position = Vector2(46, 39)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1461117360]
