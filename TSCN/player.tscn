@@ -423,6 +423,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8okks"]
 size = Vector2(13, 20)
 
+[sub_resource type="Gradient" id="Gradient_8okks"]
+offsets = PackedFloat32Array(0, 0.045673076, 0.098557696, 0.9879808, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.72836536, 0.72836536, 0.72836536, 1, 0.7888977, 0.7888977, 0.7888977, 1, 0.7981556, 0.7981556, 0.7981556, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ljt5j"]
+gradient = SubResource("Gradient_8okks")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [node name="player" type="CharacterBody2D" unique_id=382906945]
 scale = Vector2(3, 3)
 script = ExtResource("1_8okks")
@@ -437,3 +447,12 @@ animation = &"dying"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1147810714]
 position = Vector2(1, -0.9999999)
 shape = SubResource("RectangleShape2D_8okks")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1408564854]
+visible = false
+texture_filter = 1
+position = Vector2(0.33333296, -0.6666673)
+scale = Vector2(0.78124994, 1.4062501)
+texture = SubResource("GradientTexture2D_ljt5j")
+texture_scale = 0.2
+height = 164.0
