@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bsqow7wt5ltos"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpccf"]
+size = Vector2(68, 56)
+
+[node name="exitpoint" type="Area2D" unique_id=639755335]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=799114498]
+shape = SubResource("RectangleShape2D_gpccf")
