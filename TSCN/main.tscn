@@ -858,3 +858,36 @@ texture = ExtResource("10_i7dsc")
 
 [node name="slime" parent="." unique_id=841777239 instance=ExtResource("11_055hc")]
 position = Vector2(321, 278)
+
+[node name="slime2" parent="." unique_id=70905630 instance=ExtResource("11_055hc")]
+position = Vector2(1016, 585)
+
+[node name="slime7" parent="." unique_id=703877369 instance=ExtResource("11_055hc")]
+position = Vector2(51, 595)
+
+[node name="slime3" parent="." unique_id=1204326630 instance=ExtResource("11_055hc")]
+position = Vector2(520, 86)
+
+[node name="slime4" parent="." unique_id=637647566 instance=ExtResource("11_055hc")]
+position = Vector2(515, 460)
+
+[node name="slime5" parent="." unique_id=2114425235 instance=ExtResource("11_055hc")]
+position = Vector2(762, 277)
+
+[node name="slime6" parent="." unique_id=565672464 instance=ExtResource("11_055hc")]
+position = Vector2(513, 276)
+
+[node name="Label" type="Label" parent="." unique_id=774054297]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 483.0
+offset_top = -4.0
+offset_right = 542.0
+offset_bottom = 18.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 15
+text = "LEVEL 1"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1398952779]
+visible = false

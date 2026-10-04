@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djm8unja6btie" path="res://SCRIPTS/player.gd" id="1_8okks"]
 [ext_resource type="Texture2D" uid="uid://npf1gokcyruj" path="res://ASSETS/Player/Player.png" id="1_mc0db"]
+[ext_resource type="AudioStream" uid="uid://b42smcuk4ulso" path="res://ASSETS/Player/mixkit-game-level-music-689.mp3" id="3_ljt5j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mc0db"]
 atlas = ExtResource("1_mc0db")
@@ -463,12 +464,17 @@ texture_scale = 0.2
 height = 164.0
 
 [node name="hitbox" type="Area2D" parent="." unique_id=1358651412]
-position = Vector2(7.5, -0.5)
+position = Vector2(7, -0.6666667)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1979853250]
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_ljt5j")
 metadata/_edit_group_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=919763137]
+stream = ExtResource("3_ljt5j")
+autoplay = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
