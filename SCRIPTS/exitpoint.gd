@@ -1,6 +1,7 @@
 extends Area2D
 @export var next_scene = PackedScene
 @export var fade_duration : float = 0.5
+#@onready var 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
