@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b2dtk1dg52y1t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xcrs3"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="slime" type="CharacterBody2D" unique_id=841777239]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1587166516]
+sprite_frames = SubResource("SpriteFrames_xcrs3")
+animation = &"idle"

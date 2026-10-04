@@ -15,8 +15,16 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 var last_direction : Vector2 = Vector2.RIGHT
+var is_attacking : bool = false
+
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("attack") and not is_attacking:
+		attack()
+	if is_attacking:
+		velocity = Vector2.ZERO
+		return
+	
 	process_movement()
 	process_animation(last_direction)
 	move_and_slide()
@@ -37,6 +45,8 @@ func process_movement() -> void:
 		velocity = Vector2.ZERO
 	
 func process_animation(direction) ->  void:
+	if is_attacking:
+		return
 	if velocity !=Vector2.ZERO:
 		play_animation("run", last_direction)
 	else:
@@ -50,6 +60,16 @@ func play_animation(prefix: String ,dir : Vector2) -> void:
 		animated.play(prefix + "_up")
 	elif dir.y > 0:
 		animated.play(prefix + "_down")
+		
+func attack() -> void:
+	is_attacking = true
+	play_animation("attack" , last_direction)
+	print("attack")
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if is_attacking:
+		is_attacking = false
 
 func start_blink_cycle() -> void:
 	while true:

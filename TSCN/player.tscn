@@ -226,7 +226,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wi43n")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack_down",
 "speed": 5.0
 }, {
@@ -243,7 +243,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w8equ")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack_right",
 "speed": 5.0
 }, {
@@ -260,7 +260,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_778ej")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack_up",
 "speed": 5.0
 }, {
@@ -442,7 +442,7 @@ texture_filter = 1
 position = Vector2(0.50000036, 0)
 scale = Vector2(0.9895834, 1)
 sprite_frames = SubResource("SpriteFrames_aueww")
-animation = &"dying"
+animation = &"attack_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1147810714]
 position = Vector2(1, -0.9999999)
@@ -456,3 +456,5 @@ scale = Vector2(0.78124994, 1.4062501)
 texture = SubResource("GradientTexture2D_ljt5j")
 texture_scale = 0.2
 height = 164.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
