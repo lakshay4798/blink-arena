@@ -11,14 +11,22 @@ extends CharacterBody2D
 
 @export var dark_color: Color = Color(0.05, 0.05, 0.08, 1.0)   
 @export var dim_map_color: Color = Color(0.35, 0.35, 0.45, 1.0) 
-
+@onready var hitbox = $hitbox
 
 const SPEED = 300.0
 var last_direction : Vector2 = Vector2.RIGHT
 var is_attacking : bool = false
+var hitbox_offset : Vector2
+var strength : int = 20
+
+func _ready() -> void:
+	start_blink_cycle()
+	start_blink_loop()
+	hitbox_offset = hitbox.position
 
 
 func _physics_process(delta: float) -> void:
+	hitbox.monitoring =false
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		attack()
 	if is_attacking:
@@ -29,9 +37,6 @@ func _physics_process(delta: float) -> void:
 	process_animation(last_direction)
 	move_and_slide()
 
-func _ready() -> void:
-	start_blink_cycle()
-	start_blink_loop()
 
 func process_movement() -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -41,6 +46,7 @@ func process_movement() -> void:
 	if direction != Vector2.ZERO:
 		velocity = direction * SPEED
 		last_direction = direction
+		update_hitbox_offset()
 	else:
 		velocity = Vector2.ZERO
 	
@@ -51,7 +57,7 @@ func process_animation(direction) ->  void:
 		play_animation("run", last_direction)
 	else:
 		play_animation("idle" , last_direction)
-		
+
 func play_animation(prefix: String ,dir : Vector2) -> void:
 	if dir.x != 0:
 		animated.flip_h = dir.x <0
@@ -61,15 +67,40 @@ func play_animation(prefix: String ,dir : Vector2) -> void:
 	elif dir.y > 0:
 		animated.play(prefix + "_down")
 		
+
 func attack() -> void:
 	is_attacking = true
+	hitbox.monitoring = true
 	play_animation("attack" , last_direction)
-	print("attack")
-
+	#print("attack")
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if is_attacking:
 		is_attacking = false
+
+
+func update_hitbox_offset() -> void:
+	var x := hitbox_offset.x
+	var y := hitbox_offset.y
+	
+	match last_direction:
+		Vector2.LEFT:
+			hitbox.position = Vector2(-x ,y)
+		Vector2.RIGHT:
+			hitbox.position = Vector2(x ,y)
+		Vector2.UP:
+			hitbox.position = Vector2(y ,-x)
+		Vector2.DOWN:
+			hitbox.position = Vector2(-y ,x)
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if is_attacking and body.name == "slime":
+		#print(body.name)
+		#print("hit")
+		body.take_damage(strength)
+
+
+
 
 func start_blink_cycle() -> void:
 	while true:

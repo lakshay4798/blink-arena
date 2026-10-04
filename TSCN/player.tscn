@@ -433,6 +433,9 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljt5j"]
+size = Vector2(13, 14)
+
 [node name="player" type="CharacterBody2D" unique_id=382906945]
 scale = Vector2(3, 3)
 script = ExtResource("1_8okks")
@@ -442,7 +445,9 @@ texture_filter = 1
 position = Vector2(0.50000036, 0)
 scale = Vector2(0.9895834, 1)
 sprite_frames = SubResource("SpriteFrames_aueww")
-animation = &"attack_up"
+animation = &"attack_right"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1147810714]
 position = Vector2(1, -0.9999999)
@@ -457,4 +462,13 @@ texture = SubResource("GradientTexture2D_ljt5j")
 texture_scale = 0.2
 height = 164.0
 
+[node name="hitbox" type="Area2D" parent="." unique_id=1358651412]
+position = Vector2(7.5, -0.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1979853250]
+shape = SubResource("RectangleShape2D_ljt5j")
+metadata/_edit_group_ = true
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

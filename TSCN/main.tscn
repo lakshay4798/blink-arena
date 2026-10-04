@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c5w644phop5pi" path="res://TSCN/level_2.tscn" id="8_aon6n"]
 [ext_resource type="Texture2D" uid="uid://c7l5s5lf8v6ur" path="res://ASSETS/Walls/Door Open.png" id="9_r8otd"]
 [ext_resource type="Texture2D" uid="uid://c883xqebboy32" path="res://ASSETS/Walls/Door Close.png" id="10_i7dsc"]
+[ext_resource type="PackedScene" uid="uid://b2dtk1dg52y1t" path="res://TSCN/slime.tscn" id="11_055hc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7dsc"]
 texture = ExtResource("7_w00sc")
@@ -837,7 +838,7 @@ scale = Vector2(9, 11)
 texture = ExtResource("9_r8otd")
 
 [node name="player" parent="." unique_id=1565881288 instance=ExtResource("1_fmnqs")]
-position = Vector2(34, 52)
+position = Vector2(45, 56)
 
 [node name="exitpoint" parent="." unique_id=639755335 instance=ExtResource("7_1flj6")]
 position = Vector2(1057, -2)
@@ -845,6 +846,7 @@ scale = Vector2(0.8, 1.3)
 next_scene = ExtResource("8_aon6n")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1911363621]
+visible = false
 color = Color(0.101608075, 0.10161439, 0.13567609, 1)
 
 [node name="DoorClose" type="Sprite2D" parent="." unique_id=731863880]
@@ -853,3 +855,6 @@ texture_filter = 1
 position = Vector2(1037, 34)
 scale = Vector2(9, 11)
 texture = ExtResource("10_i7dsc")
+
+[node name="slime" parent="." unique_id=841777239 instance=ExtResource("11_055hc")]
+position = Vector2(321, 278)
