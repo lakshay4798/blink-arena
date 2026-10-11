@@ -168,8 +168,6 @@ size = Vector2(39, 27)
 radius = 145.0
 
 [node name="slime" type="CharacterBody2D" unique_id=841777239]
-collision_layer = 2
-collision_mask = 0
 script = ExtResource("1_3sih8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1587166516]
@@ -191,4 +189,3 @@ shape = SubResource("RectangleShape2D_nqhgx")
 shape = SubResource("CircleShape2D_nqhgx")
 
 [connection signal="body_entered" from="sight" to="." method="_on_sight_body_entered"]
-[connection signal="body_exited" from="sight" to="." method="_on_sight_body_exited"]

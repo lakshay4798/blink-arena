@@ -1,6 +1,7 @@
 extends Area2D
 @export var next_scene = PackedScene
 @export var fade_duration : float = 0.5
+@onready var clear_sound = $AudioStreamPlayer2D
 #@onready var 
 
 # Called when the node enters the scene tree for the first time.
@@ -9,6 +10,8 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "player":
+		clear_sound.play()
+		get_tree().create_timer(0.5).timeout
 		if next_scene:
 			fade_and_change_scene()
 		else:
