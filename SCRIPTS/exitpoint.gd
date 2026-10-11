@@ -2,11 +2,27 @@ extends Area2D
 @export var next_scene = PackedScene
 @export var fade_duration : float = 0.5
 @onready var clear_sound = $AudioStreamPlayer2D
-#@onready var 
+@onready var exittrick = $CollisionShape2D 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
+
+func _process(delta: float) -> void:
+	if "level_3" in get_tree().current_scene.name.to_lower():
+		if Input.is_key_pressed(KEY_E):
+			pass
+
+
+#func _unhandled_input(event: InputEvent) -> void:
+	#if "level_3" in get_tree().current_scene.name.to_lower():
+		#if event is InputEventKey and event.pressed and event.keycode == KEY_E:
+			## Directly check if the player is currently overlapping this area
+			#for body in get_overlapping_bodies():
+				#if body.name == "player":
+					#_on_body_entered(body) # Pass 'body' into the function!
+					#break
+
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "player":
@@ -16,6 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 			fade_and_change_scene()
 		else:
 			"level not loaded"
+
 
 func fade_and_change_scene() -> void:
 	# 1. Create a persistent canvas layer on root

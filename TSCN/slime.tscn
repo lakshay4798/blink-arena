@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cp3i5l38eecyv" path="res://SCRIPTS/slime.gd" id="1_3sih8"]
 [ext_resource type="Texture2D" uid="uid://roypagh4j6fn" path="res://ASSETS/Enemies/Slime_Green.png" id="1_nqhgx"]
+[ext_resource type="AudioStream" uid="uid://b7ctp58rvqj62" path="res://ASSETS/Sounds/u_nfmiq7z9as-bullethit-449809.mp3" id="3_3p600"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3sih8"]
 atlas = ExtResource("1_nqhgx")
@@ -187,5 +188,8 @@ shape = SubResource("RectangleShape2D_nqhgx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sight" unique_id=1957628166]
 shape = SubResource("CircleShape2D_nqhgx")
+
+[node name="slime_death" type="AudioStreamPlayer2D" parent="." unique_id=1878030903]
+stream = ExtResource("3_3p600")
 
 [connection signal="body_entered" from="sight" to="." method="_on_sight_body_entered"]

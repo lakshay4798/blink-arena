@@ -4,23 +4,22 @@ extends CharacterBody2D
 @export var fade_duration: float = 0.5   # Smooth transition time
 @onready var canvas_modulate: CanvasModulate = get_node_or_null("../CanvasModulate")
 @onready var player_light: PointLight2D = $PointLight2D
-
+@onready var exit = $"."
 @export var dark_duration: float = 10.0  
 @export var preview_duration: float = 3.0  
-
 
 @export var dark_color: Color = Color(0.05, 0.05, 0.08, 1.0)   
 @export var dim_map_color: Color = Color(0.35, 0.35, 0.45, 1.0) 
 @onready var hitbox = $hitbox
 
-signal hit(hits_left: int)
-signal died
 
 @export var max_hits := 3
 @export var invincible_time := 1.0
 
 var hits := 0
 var invincible := false
+signal hit(hits_left: int)
+signal died
 
 const SPEED = 300.0
 var health : int = 3
@@ -36,6 +35,13 @@ func _ready() -> void:
 	hitbox_offset = hitbox.position
 	add_to_group("player")
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_echo(): return
+	if event is InputEventKey and event.pressed and event.keycode == KEY_E:
+		var exit_menu = load("res://TSCN/exitpoint.tscn").instantiate()
+		get_tree().root.add_child(exit_menu)
+
+
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		attack()
@@ -43,7 +49,11 @@ func _physics_process(delta: float) -> void:
 	if is_attacking:
 		velocity = Vector2.ZERO
 		return
-	
+		
+	#if "level_3" in get_tree().current_scene.name.to_lower():
+		#if Input.is_key_pressed(KEY_S):
+			#pass
+
 	process_movement()
 	process_animation(last_direction)
 	move_and_slide()

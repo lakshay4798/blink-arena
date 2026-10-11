@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djm8unja6btie" path="res://SCRIPTS/player.gd" id="1_8okks"]
 [ext_resource type="Texture2D" uid="uid://npf1gokcyruj" path="res://ASSETS/Player/Player.png" id="1_mc0db"]
-[ext_resource type="AudioStream" uid="uid://b42smcuk4ulso" path="res://ASSETS/Player/mixkit-game-level-music-689.mp3" id="3_ljt5j"]
+[ext_resource type="AudioStream" uid="uid://b42smcuk4ulso" path="res://ASSETS/Sounds/mixkit-game-level-music-689.mp3" id="3_ljt5j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mc0db"]
 atlas = ExtResource("1_mc0db")

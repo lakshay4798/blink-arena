@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bsqow7wt5ltos"]
 
 [ext_resource type="Script" uid="uid://b34neuick875w" path="res://SCRIPTS/exitpoint.gd" id="1_pcnc6"]
-[ext_resource type="AudioStream" uid="uid://dgo0pgyy7hsaj" path="res://ASSETS/Player/universfield-level-up-06-370051.mp3" id="2_0ccjg"]
+[ext_resource type="AudioStream" uid="uid://dgo0pgyy7hsaj" path="res://ASSETS/Sounds/universfield-level-up-06-370051.mp3" id="2_0ccjg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpccf"]
 size = Vector2(68, 56)
