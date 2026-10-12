@@ -175,10 +175,8 @@ script = ExtResource("1_3sih8")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_xcrs3")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.016341044
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1726721698]
 position = Vector2(-0.5, 1.5)
@@ -187,6 +185,7 @@ shape = SubResource("RectangleShape2D_nqhgx")
 [node name="sight" type="Area2D" parent="." unique_id=56824225]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sight" unique_id=1957628166]
+visible = false
 shape = SubResource("CircleShape2D_nqhgx")
 
 [node name="slime_death" type="AudioStreamPlayer2D" parent="." unique_id=1878030903]

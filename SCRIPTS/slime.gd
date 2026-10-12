@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var slime_body =$AnimatedSprite2D
 @onready var slime_death = $slime_death
 
-const SPEED = 200.0
+var SPEED = 200.0
 var target = null
 var health :int = 100
 var is_dead :bool = false
@@ -26,6 +26,10 @@ func _physics_process(delta: float) -> void:
 		for body in hitbox.get_overlapping_bodies():
 			if body.is_in_group("player") and body.has_method("take_hit"):
 				body.take_hit()
+	if "level_3" in get_tree().current_scene.name.to_lower():
+		SPEED = 270.0
+	else:
+		return
 
 func take_damage(damage : int) -> void:
 	if is_dead:
@@ -58,7 +62,7 @@ func die() -> void:
 	await tween.finished
 
 	queue_free()
-
+#
 #func _attack(delta: float) -> void:
 	#var direction = (target.position - position).normalized()
 	#position += direction * SPEED * delta

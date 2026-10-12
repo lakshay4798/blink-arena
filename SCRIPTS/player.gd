@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var player_light: PointLight2D = $PointLight2D
 @onready var exit = $"."
 @export var dark_duration: float = 10.0  
-@export var preview_duration: float = 1.0  
+@export var preview_duration: float = 2.0  
 
 @export var dark_color: Color = Color(0.05, 0.05, 0.08, 1.0)   
 @export var dim_map_color: Color = Color(0.35, 0.35, 0.45, 1.0) 

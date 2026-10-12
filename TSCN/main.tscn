@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b2dtk1dg52y1t" path="res://TSCN/slime.tscn" id="11_055hc"]
 [ext_resource type="Script" uid="uid://buyw1m7ejuy5h" path="res://SCRIPTS/death.gd" id="12_j77hf"]
 [ext_resource type="AudioStream" uid="uid://bcv16uh577m0t" path="res://ASSETS/Sounds/death.mp3" id="13_vq7sx"]
+[ext_resource type="FontFile" uid="uid://d17stwwehmkwd" path="res://ASSETS/fonts/Square-Black.ttf" id="14_w00sc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7dsc"]
 texture = ExtResource("7_w00sc")
@@ -851,6 +852,7 @@ scale = Vector2(0.8, 1.3)
 next_scene = ExtResource("8_aon6n")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1911363621]
+visible = false
 color = Color(0.101608075, 0.10161439, 0.13567609, 1)
 
 [node name="DoorClose" type="Sprite2D" parent="." unique_id=731863880]
@@ -874,19 +876,6 @@ position = Vector2(762, 277)
 
 [node name="slime6" parent="." unique_id=565672464 instance=ExtResource("11_055hc")]
 position = Vector2(513, 276)
-
-[node name="Label" type="Label" parent="." unique_id=774054297]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 483.0
-offset_top = -4.0
-offset_right = 542.0
-offset_bottom = 18.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 15
-text = "LEVEL 1"
-metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1398952779]
 visible = false
@@ -913,5 +902,15 @@ shape = SubResource("SegmentShape2D_vq7sx")
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="death" unique_id=906943802]
 stream = ExtResource("13_vq7sx")
+
+[node name="Label" type="Label" parent="." unique_id=509714065]
+offset_left = 506.0
+offset_top = 15.0
+offset_right = 565.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.81240565, 0.8124055, 0.8124055, 1)
+theme_override_fonts/font = ExtResource("14_w00sc")
+theme_override_font_sizes/font_size = 20
+text = "LEVEL 1"
 
 [connection signal="body_entered" from="death" to="death" method="_on_body_entered"]
