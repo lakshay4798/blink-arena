@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cadxp1615pooe"]
 
 [ext_resource type="FontFile" uid="uid://bobmmw5e78c6r" path="res://ASSETS/fonts/Pikselator Wide.ttf" id="1_kerui"]
-[ext_resource type="Script" uid="uid://dr52jjo48n5xs" path="res://TSCN/start.gd" id="1_rc7u3"]
+[ext_resource type="Script" uid="uid://dr52jjo48n5xs" path="res://SCRIPTS/start.gd" id="1_rc7u3"]
 [ext_resource type="Texture2D" uid="uid://75mwpjk1eeew" path="res://ASSETS/Floors/Floor 02.png" id="2_cikqm"]
 [ext_resource type="AudioStream" uid="uid://b3so0to5cyex5" path="res://ASSETS/Sounds/mixkit-mouse-click-close-1113.wav" id="3_a533b"]
 [ext_resource type="FontFile" uid="uid://d17stwwehmkwd" path="res://ASSETS/fonts/Square-Black.ttf" id="3_cikqm"]
