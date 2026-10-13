@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://cadxp1615pooe"]
+
+[ext_resource type="FontFile" uid="uid://bobmmw5e78c6r" path="res://ASSETS/fonts/Pikselator Wide.ttf" id="1_kerui"]
+[ext_resource type="Script" uid="uid://dr52jjo48n5xs" path="res://TSCN/start.gd" id="1_rc7u3"]
+[ext_resource type="Texture2D" uid="uid://75mwpjk1eeew" path="res://ASSETS/Floors/Floor 02.png" id="2_cikqm"]
+[ext_resource type="AudioStream" uid="uid://b3so0to5cyex5" path="res://ASSETS/Sounds/mixkit-mouse-click-close-1113.wav" id="3_a533b"]
+[ext_resource type="FontFile" uid="uid://d17stwwehmkwd" path="res://ASSETS/fonts/Square-Black.ttf" id="3_cikqm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v28g6"]
+bg_color = Color(0, 0, 0.10980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a533b"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cikqm"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(640, 400, 1)
+gravity = Vector3(0, -5, 0)
+
+[node name="START" type="Control" unique_id=314345642]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rc7u3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1318085021]
+layout_mode = 0
+offset_right = 1072.0
+offset_bottom = 640.0
+color = Color(0, 0, 0.10371773, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2037648036]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 1072.0
+offset_bottom = 644.0
+texture = ExtResource("2_cikqm")
+flip_h = true
+
+[node name="Label" type="Label" parent="." unique_id=1468364375]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -358.5
+offset_top = -110.0
+offset_right = 358.5
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_kerui")
+theme_override_font_sizes/font_size = 100
+text = "BLINK ARENA"
+
+[node name="Label2" type="Label" parent="Label" unique_id=1617542779]
+layout_mode = 0
+offset_left = -21.5
+offset_top = -35.0
+offset_right = 738.5
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 85
+text = "[                                ]"
+
+[node name="STARTBUTTON" type="Button" parent="." unique_id=596708416]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.5
+offset_top = -16.0
+offset_right = 63.5
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_cikqm")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_v28g6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a533b")
+button_mask = 3
+text = "START"
+
+[node name="QUITBUTTON" type="Button" parent="." unique_id=2092585012]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.5
+offset_top = 38.0
+offset_right = 63.5
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_cikqm")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_v28g6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a533b")
+button_mask = 3
+text = "QUIT"
+
+[node name="click" type="AudioStreamPlayer2D" parent="." unique_id=258927595]
+stream = ExtResource("3_a533b")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=178941488]
+position = Vector2(536, 345)
+amount = 35
+trail_enabled = true
+trail_lifetime = 6.0
+process_material = SubResource("ParticleProcessMaterial_cikqm")
+
+[connection signal="pressed" from="STARTBUTTON" to="." method="_on_startbutton_pressed"]
