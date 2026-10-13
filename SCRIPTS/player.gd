@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 @onready var animated = $AnimatedSprite2D
-@export var fade_duration: float = 0.5   # Smooth transition time
+@export var fade_duration: float = 0.5   
 @onready var canvas_modulate: CanvasModulate = get_node_or_null("../CanvasModulate")
 @onready var player_light: PointLight2D = $PointLight2D
 @onready var exit = $"."
 @export var dark_duration: float = 10.0  
 @export var preview_duration: float = 2.0  
-
+@onready var level4 = $"../BG2"
 @export var dark_color: Color = Color(0.05, 0.05, 0.08, 1.0)   
 @export var dim_map_color: Color = Color(0.35, 0.35, 0.45, 1.0) 
 @onready var hitbox = $hitbox
@@ -50,13 +50,15 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		return
 		
-	#if "level_3" in get_tree().current_scene.name.to_lower():
-		#if Input.is_key_pressed(KEY_S):
-			#pass
 
 	process_movement()
 	process_animation(last_direction)
 	move_and_slide()
+	#if "level_4" in get_tree().current_scene.name.to_lower():
+		#if Input.is_key_pressed(KEY_E):
+			#level4.clear()
+		#else:
+			#level4.
 
 func take_hit() -> void:
 	if invincible:

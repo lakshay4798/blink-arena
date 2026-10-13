@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://75mwpjk1eeew" path="res://ASSETS/Floors/Floor 02.png" id="2_cikqm"]
 [ext_resource type="AudioStream" uid="uid://b3so0to5cyex5" path="res://ASSETS/Sounds/mixkit-mouse-click-close-1113.wav" id="3_a533b"]
 [ext_resource type="FontFile" uid="uid://d17stwwehmkwd" path="res://ASSETS/fonts/Square-Black.ttf" id="3_cikqm"]
+[ext_resource type="AudioStream" uid="uid://b42smcuk4ulso" path="res://ASSETS/Sounds/mixkit-game-level-music-689.mp3" id="6_v28g6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v28g6"]
 bg_color = Color(0, 0, 0.10980392, 1)
@@ -67,7 +68,9 @@ offset_top = -35.0
 offset_right = 738.5
 offset_bottom = 84.0
 theme_override_font_sizes/font_size = 85
-text = "[                                ]"
+text = "[                                ]
+
+_____________________"
 
 [node name="STARTBUTTON" type="Button" parent="." unique_id=596708416]
 layout_mode = 1
@@ -114,9 +117,31 @@ stream = ExtResource("3_a533b")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=178941488]
 position = Vector2(536, 345)
-amount = 35
+amount = 1000
 trail_enabled = true
 trail_lifetime = 6.0
 process_material = SubResource("ParticleProcessMaterial_cikqm")
+
+[node name="BGMUSIC" type="AudioStreamPlayer2D" parent="." unique_id=1074022447]
+position = Vector2(536, 345)
+stream = ExtResource("6_v28g6")
+volume_db = -15.0
+autoplay = true
+
+[node name="Label3" type="Label" parent="." unique_id=1922176509]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -14.0
+offset_right = 20.0
+offset_bottom = 9.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_cikqm")
+text = "v 1.0"
 
 [connection signal="pressed" from="STARTBUTTON" to="." method="_on_startbutton_pressed"]

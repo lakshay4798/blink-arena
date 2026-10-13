@@ -474,6 +474,7 @@ metadata/_edit_group_ = true
 
 [node name="BGMUSIC" type="AudioStreamPlayer2D" parent="." unique_id=919763137]
 stream = ExtResource("3_ljt5j")
+volume_db = -15.0
 autoplay = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
