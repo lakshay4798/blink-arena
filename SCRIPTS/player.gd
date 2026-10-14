@@ -49,7 +49,6 @@ func _physics_process(delta: float) -> void:
 	if is_attacking:
 		velocity = Vector2.ZERO
 		return
-		
 
 	process_movement()
 	process_animation(last_direction)

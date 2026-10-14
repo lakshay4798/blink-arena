@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b0lhg8fw5lqbr" path="res://TSCN/player.tscn" id="2_ksw6i"]
 [ext_resource type="PackedScene" uid="uid://b2dtk1dg52y1t" path="res://TSCN/slime.tscn" id="3_ksw6i"]
 [ext_resource type="PackedScene" uid="uid://bsqow7wt5ltos" path="res://TSCN/exitpoint.tscn" id="4_u5he2"]
-[ext_resource type="PackedScene" uid="uid://b1xeldioittk0" path="res://TSCN/endscene.tscn" id="5_oqvi8"]
 [ext_resource type="FontFile" uid="uid://d17stwwehmkwd" path="res://ASSETS/fonts/Square-Black.ttf" id="6_6hfwg"]
+[ext_resource type="PackedScene" uid="uid://eg58cg7ex8qn" path="res://TSCN/level_4.tscn" id="6_btvct"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5he2"]
 texture = ExtResource("1_rulug")
@@ -667,8 +667,7 @@ position = Vector2(538, 422)
 [node name="exitpoint" parent="." unique_id=639755335 instance=ExtResource("4_u5he2")]
 position = Vector2(1058, 615)
 scale = Vector2(2, 2)
-next_scene = ExtResource("5_oqvi8")
+next_scene = ExtResource("6_btvct")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1178577624]
-visible = false
 color = Color(0.101608075, 0.10161439, 0.13567609, 1)
