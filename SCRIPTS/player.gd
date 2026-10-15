@@ -7,7 +7,7 @@ extends CharacterBody2D
 @onready var exit = $"."
 @export var dark_duration: float = 10.0  
 @export var preview_duration: float = 2.0  
-@onready var level4 = $"../BG2"
+#@onready var level4 = $"../BG2"
 @export var dark_color: Color = Color(0.05, 0.05, 0.08, 1.0)   
 @export var dim_map_color: Color = Color(0.35, 0.35, 0.45, 1.0) 
 @onready var hitbox = $hitbox

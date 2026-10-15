@@ -670,4 +670,5 @@ scale = Vector2(2, 2)
 next_scene = ExtResource("6_btvct")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1178577624]
+visible = false
 color = Color(0.101608075, 0.10161439, 0.13567609, 1)

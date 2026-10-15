@@ -798,6 +798,7 @@ a = Vector2(3, 699)
 [node name="level_2" type="Node2D" unique_id=687616162]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=823145142]
+visible = false
 position = Vector2(1, 1)
 color = Color(0.101608075, 0.10161439, 0.13567609, 1)
 
