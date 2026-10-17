@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dk6rj4m2gj8bm" path="res://ASSETS/Walls/Set 1.png" id="1_m7iev"]
 [ext_resource type="PackedScene" uid="uid://b0lhg8fw5lqbr" path="res://TSCN/player.tscn" id="1_rqb3n"]
 [ext_resource type="PackedScene" uid="uid://bsqow7wt5ltos" path="res://TSCN/exitpoint.tscn" id="3_kukud"]
-[ext_resource type="PackedScene" uid="uid://b1xeldioittk0" path="res://TSCN/endscene.tscn" id="4_gcmrh"]
+[ext_resource type="PackedScene" uid="uid://bucdugs3tbvut" path="res://TSCN/level_5.tscn" id="4_gcmrh"]
 [ext_resource type="PackedScene" uid="uid://b2dtk1dg52y1t" path="res://TSCN/slime.tscn" id="5_gcmrh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_88re3"]
