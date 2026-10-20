@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Blink Arena"
-run/main_scene="uid://bax550oie0hyb"
+run/main_scene="uid://cadxp1615pooe"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

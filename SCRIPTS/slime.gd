@@ -17,36 +17,27 @@ func _ready() -> void:
 		#push_warning("Slime: add an Area2D child named 'Hitbox' (with a CollisionShape2D).")
 		pass
 
-func _input(event: InputEvent) -> void:
-	# Check if the "T" key was pressed
-	if event.is_action_pressed("slime_blast") or (event is InputEventKey and event.pressed and event.keycode == KEY_T):
-		blast()
+#---------------------------------------------------#
+#func _input(event: InputEvent) -> void:
+	## Check if the "T" key was pressed
+	#if event.is_action_pressed("slime_blast") or (event is InputEventKey and event.pressed and event.keycode == KEY_T):
+		#blast()
 
-func blast() -> void:
-	print("Slime blasted automatically!")
-	
-	# Safely check if BlastArea exists before using it
-	if has_node("BlastArea"):
-		var overlapping_bodies = $BlastArea.get_overlapping_bodies()
-		for body in overlapping_bodies:
-			if body.is_in_group("player") and body != self:
-				pass
-				
-	# 2. Play your death/blast animation if you have one
-	# Replace "die" or "blast" with the exact name of your animation
-	if $AnimatedSprite2D:
-		$AnimatedSprite2D.play("die") 
-	
-	# 3. Disable collision so the slime can't hurt/block the player during the animation
-	if $CollisionShape2D:
-		$CollisionShape2D.set_deferred("disabled", true)
-
-	# 4. Wait for 2 seconds before removing the slime
-	await get_tree().create_timer(2.0).timeout
-	
-	# Destroys the slime node safely when T is pressed
-	queue_free()
-	
+#func blast() -> void:
+	#print("Slime blasted")
+	#if has_node("BlastArea"):
+		#var overlapping_bodies = $BlastArea.get_overlapping_bodies()
+		#for body in overlapping_bodies:
+			#if body.is_in_group("player") and body != self:
+				#pass
+	#if $AnimatedSprite2D:
+		#$AnimatedSprite2D.play("die") 
+	## Disable collision so the slime can't hurt/block the player during the animation
+	#if $CollisionShape2D:
+		#$CollisionShape2D.set_deferred("disabled", true)
+	#await get_tree().create_timer(2.0).timeout
+	#queue_free()
+#---------------------------------------------------------#
 	
 func _physics_process(delta: float) -> void:
 	if is_dead:
