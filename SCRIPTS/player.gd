@@ -35,29 +35,6 @@ func _ready() -> void:
 	hitbox_offset = hitbox.position
 	add_to_group("player")
 
-#for blast all slime at once
-#func _input(event: InputEvent) -> void:
-	#if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_T:
-		#trigger_random_slime_blasts()
-#
-#func trigger_random_slime_blasts() -> void:
-	## Get all nodes in the "slimes" group
-	#var all_slimes = get_tree().get_nodes_in_group("slimes")
-	#
-	#if all_slimes.is_empty():
-		#return
-		#
-	## Randomize their order
-	#all_slimes.shuffle()
-	#
-	## Pick up to 4 slimes to blast
-	#var count = min(4, all_slimes.size())
-	#for i in range(count):
-		#var slime = all_slimes[i]
-		#if slime.has_method("blast"):
-			#slime.blast()
-
-
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_echo(): return
 	if event is InputEventKey and event.pressed and event.keycode == KEY_E:
