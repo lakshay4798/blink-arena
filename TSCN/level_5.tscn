@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://b0lhg8fw5lqbr" path="res://TSCN/player.tscn" id="2_vuppm"]
 [ext_resource type="Texture2D" uid="uid://bqxqc5va247tl" path="res://ASSETS/Walls/mainlevbuild.png" id="3_vuppm"]
 [ext_resource type="PackedScene" uid="uid://bsqow7wt5ltos" path="res://TSCN/exitpoint.tscn" id="4_sqqdj"]
-[ext_resource type="PackedScene" uid="uid://b1xeldioittk0" path="res://TSCN/endscene.tscn" id="5_wt7wa"]
 [ext_resource type="PackedScene" uid="uid://b2dtk1dg52y1t" path="res://TSCN/slime.tscn" id="6_wt7wa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1m2o5"]
@@ -1724,7 +1723,7 @@ color = Color(0.101608075, 0.10161439, 0.13567609, 1)
 [node name="exitpoint" parent="." unique_id=639755335 instance=ExtResource("4_sqqdj")]
 position = Vector2(787.00006, 587)
 scale = Vector2(0.5, 1.93)
-next_scene = ExtResource("5_wt7wa")
+next_scene = null
 
 [node name="slime" parent="." unique_id=841777239 instance=ExtResource("6_wt7wa")]
 position = Vector2(507, 601)

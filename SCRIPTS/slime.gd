@@ -52,6 +52,8 @@ func _physics_process(delta: float) -> void:
 				body.take_hit()
 	if "level_3" in get_tree().current_scene.name.to_lower():
 		SPEED = 270.0
+	if "level_6" in get_tree().current_scene.name.to_lower():
+		SPEED = 320.0
 	else:
 		return
 
